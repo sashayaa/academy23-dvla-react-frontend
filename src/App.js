@@ -7,7 +7,7 @@ import React, { useState, useEffect } from 'react';
 // import { OrderedList, ListItem } from 'govuk-react';
 // import { Button, ButtonArrow } from 'govuk-react';
 //const axios = require('axios').default;
-const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata";
+const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata/1";
 
 export default function App() {
   const [post, setPost] = React.useState(null);
@@ -22,7 +22,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>{post}</h1>
+      <h1>{post.firstName}</h1>
     </div>
   );
 }
