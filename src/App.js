@@ -1,28 +1,29 @@
 import './App.css';
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
-
+import React from 'react';
 // import { Page, H1, BackLink } from 'govuk-react';
 // import { Paragraph } from 'govuk-react';
 // import { OrderedList, ListItem } from 'govuk-react';
 // import { Button, ButtonArrow } from 'govuk-react';
 //const axios = require('axios').default;
-const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata/1";
+
+const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata";
 
 export default function App() {
   const [post, setPost] = React.useState(null);
 
   React.useEffect(() => {
-    axios.get(baseURL).then((response) => {
+    axios.get(`${baseURL}/1`).then((response) => {
       setPost(response.data);
     });
   }, []);
 
-  if (!post) return "No post!";
+  if (!post) return "Error";
 
   return (
     <div>
       <h1>{post.firstName}</h1>
+      
     </div>
   );
 }
