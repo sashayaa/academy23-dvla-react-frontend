@@ -5,7 +5,6 @@ import Reschedule from './Pages/Reschedule';
 import Cancel from './Pages/Cancel';
 import Booking from './Pages/Booking';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-//const axios = require('axios').default;
 
 
 function App() {
