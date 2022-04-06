@@ -1,6 +1,22 @@
 .Home{
     text-align: left; 
-    display: flex;
+    width : 100%;
     min-height: 100vh;
+
 }
 
+.Container{
+        display: flex; 
+        flex-direction: row;
+}
+
+.ListSize{
+    margin: 0;
+    padding: 0;
+    transform: scale(0.7);
+}
+.ListItemLeft{
+    margin-left: 12px;
+    padding: 0;
+    text-align: left;
+}
