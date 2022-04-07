@@ -1,6 +1,6 @@
 // import axios from 'axios';
 import React, { useEffect } from "react";
-import { Page, H1, H2, UnorderedList, H4, InsetText, Link } from "govuk-react";
+import { Page, H1, H2, UnorderedList, H4, InsetText, Link, H5, H6 } from "govuk-react";
 import "../Styles/Home.css";
 import { Paragraph } from "govuk-react";
 import { OrderedList, ListItem } from "govuk-react";
@@ -26,16 +26,24 @@ export default function Home() {
             <Button icon={<ButtonArrow />} start>
               Start now
             </Button>
-            <InsetText>
-              This service is also available in{""}
-              <a href="https://en.wikipedia.org/wiki/Markdown"> Welsh/Cymraeg</a>
-            </InsetText>
+            <H6 className="Wales">
+              <Paragraph mb={0}>
+                This page is also available in [Welsh(Cymraeg)](https://en.wikipedia.org/wiki/Markdown).
+              </Paragraph>
+            </H6>
+            <br />
             <H4>Additional Info:</H4>
-            <UnorderedList className ="ListSize">
-                <ListItem className ="ListItemLeft">Call us on 4235903409 from 8-6 </ListItem>
-                <ListItem className ="ListItemLeft">Email us at ergdrgerg@gov.uk</ListItem>
-                <ListItem className ="ListItemLeft">Send a Carrier Pigeon to captain driving.</ListItem>
-                </UnorderedList> 
+            <orderedList className="ListSize">
+              <ListItem className="ListItemLeft">
+                Call us on 4235903409 from 8-6{" "}
+              </ListItem>
+              <ListItem className="ListItemLeft">
+                Email us at ergdrgerg@gov.uk
+              </ListItem>
+              <ListItem className="ListItemLeft">
+                Send a Carrier Pigeon to captain driving.
+              </ListItem>
+            </orderedList>
           </div>
           <div className="RightInfo">
             <H2> Already Booked?</H2>
@@ -58,15 +66,16 @@ export default function Home() {
             </UnorderedList>
           </div>
         </div>
-
-        <Footer
-          meta={
-            <Footer.MetaCustom>
-              Built by the{" "}
-              <Footer.Link href="/">Government Digital Service</Footer.Link>
-            </Footer.MetaCustom>
-          }
-        />
+        <div className="Footer">
+          <Footer
+            meta={
+              <Footer.MetaCustom>
+                Built by the{" "}
+                <Footer.Link href="/">Government Digital Service</Footer.Link>
+              </Footer.MetaCustom>
+            }
+          />
+        </div>
       </Page>
     </div>
   );
