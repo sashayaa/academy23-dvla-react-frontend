@@ -1,7 +1,22 @@
 .Body{
-    margin-top: 50px;
-    margin-right: 268px;
-    margin-bottom: 0px;
-    margin-left: 268px;
     background-color: #fff;
+    display: flex;
+    flex-direction: row;
 }
+
+.Right{
+    align-items: right;
+    margin-left: 30px;
+    margin-top: 10px;
+    
+}
+
+.Left{
+    width: 70%;
+    
+}
+
+.RelatedTopicsList{
+    font-size: x-small;
+}
+
