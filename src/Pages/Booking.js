@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Page, BackLink, H2, H3, H4, Paragraph } from "govuk-react";
-import { OrderedList, ListItem, InsetText } from "govuk-react";
+import { OrderedList, ListItem, InsetText, Link } from "govuk-react";
 import { Footer, Button, ButtonArrow, SectionBreak } from "govuk-react";
 import "../Styles/Booking.css";
 
@@ -39,9 +39,9 @@ const Booking = () => {
                 <ListItem>credit or debit card</ListItem>
               </OrderedList>
 
-              <Button icon={<ButtonArrow />} start>
+              <Link to="/personaldetailsform" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
                 Start now
-              </Button>
+              </Button></Link>
 
               <H3>Do you need support?</H3>
 
