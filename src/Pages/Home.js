@@ -6,6 +6,7 @@ import { Paragraph } from "govuk-react";
 import { OrderedList, ListItem } from "govuk-react";
 import { Button, ButtonArrow } from "govuk-react";
 import { Footer } from "govuk-react";
+import { Link } from "react-router-dom";
 
 // const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata";
 
@@ -29,9 +30,9 @@ export default function Home() {
               <ListItem>credit or debit card</ListItem>
             </OrderedList>
 
-            <Button icon={<ButtonArrow />} start>
+            <Link to="/booking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
               Start now
-            </Button>
+            </Button></Link>
       
             <p>
               This page is also available in{" "}

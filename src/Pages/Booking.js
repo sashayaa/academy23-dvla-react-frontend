@@ -12,7 +12,7 @@ const Booking = () => {
   return (
     <div className="Main">
       <div className="Page">
-        <Page beforeChildren={<BackLink href="#">Back</BackLink>}>
+        <Page beforeChildren={<BackLink href="/">Back</BackLink>}>
           <div className="Body">
             <div className="Left">
               <H2>Before you start</H2>

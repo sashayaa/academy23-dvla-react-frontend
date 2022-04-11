@@ -4,6 +4,7 @@ import Home from './Pages/Home';
 import Reschedule from './Pages/Reschedule';
 import Cancel from './Pages/Cancel';
 import Booking from './Pages/Booking';
+import PersonalDetailsForm from './Pages/PersonalDetailsForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ViewBooking from './Pages/ViewBooking';
 //const axios = require('axios').default;
@@ -18,7 +19,8 @@ function App() {
           <Route exact path="/booking" element={ <Booking/> } />
           <Route exact path="/cancel" element={ <Cancel/> } />
           <Route exact path="/reschedule" element={ <Reschedule/> } />
-          <Route exact path="/viewbooking" element={ <ViewBooking/> } />          
+          <Route exact path="/viewbooking" element={ <ViewBooking/> } />    
+          <Route exact path="/personaldetailsform" element={ <PersonalDetailsForm/> } />      
         </Routes>
       </div>
      

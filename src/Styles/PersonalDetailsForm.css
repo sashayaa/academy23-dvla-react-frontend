@@ -1,0 +1,44 @@
+body{
+    height: 100%;
+    width: 100%;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+.PersonalForm{
+    text-align: left; 
+    width : 100%;
+    position: absolute;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    margin-bottom: auto;
+
+}
+
+.Footer{
+    position: absolute;
+    text-align: left; 
+    height: 7.5em;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+}
+
+
+
+
+
+.Wales{
+    position: relative;
+    left: 0;
+    transform: scale(0.7);
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
