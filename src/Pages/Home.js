@@ -1,17 +1,6 @@
 // import axios from 'axios';
 import React, { useEffect } from "react";
-import {
-  Page,
-  H1,
-  H2,
-  UnorderedList,
-  H4,
-  InsetText,
-  Link,
-  H3,
-  H5,
-  H6,
-} from "govuk-react";
+import { Page, H2, UnorderedList, H4, H3 } from "govuk-react";
 import "../Styles/Home.css";
 import { Paragraph } from "govuk-react";
 import { OrderedList, ListItem } from "govuk-react";
@@ -43,9 +32,7 @@ export default function Home() {
             <Button icon={<ButtonArrow />} start>
               Start now
             </Button>
-            {/* <Paragraph mb={0}>
-                This page is also available in [Welsh(Cymraeg)](https://en.wikipedia.org/wiki/Markdown).
-              </Paragraph> */}
+      
             <p>
               This page is also available in{" "}
               <a href="https://en.wikipedia.org/wiki/Markdown">
@@ -106,19 +93,4 @@ export default function Home() {
   );
 }
 
-//   const [post, setPost] = React.useState(null);
 
-//   React.useEffect(() => {
-//     axios.get(`${baseURL}/1`).then((response) => {
-//       setPost(response.data);
-//     });
-//   }, []);
-
-//   if (!post) return "Error";
-
-//   return (
-//     <div>
-//       <h1>{post.firstName}</h1>
-
-//     </div>
-//   );
