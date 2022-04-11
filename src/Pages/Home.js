@@ -1,6 +1,17 @@
 // import axios from 'axios';
 import React, { useEffect } from "react";
-import { Page, H1, H2, UnorderedList, H4, InsetText, Link, H5, H6 } from "govuk-react";
+import {
+  Page,
+  H1,
+  H2,
+  UnorderedList,
+  H4,
+  InsetText,
+  Link,
+  H3,
+  H5,
+  H6,
+} from "govuk-react";
 import "../Styles/Home.css";
 import { Paragraph } from "govuk-react";
 import { OrderedList, ListItem } from "govuk-react";
@@ -19,29 +30,42 @@ export default function Home() {
       <Page>
         <div className="Container">
           <div className="LeftInfo">
-            <H1>Book your theory test</H1>
+            <H2 class>Book your theory test online</H2>
 
-            <Paragraph>Book a theory test for a specific date:</Paragraph>
+            <H3> You will need your:</H3>
+
+            <OrderedList className= "needsList" listStyleType="bullet">
+              <ListItem>UK driving license number </ListItem>
+              <ListItem>email address</ListItem>
+              <ListItem>credit or debit card</ListItem>
+            </OrderedList>
 
             <Button icon={<ButtonArrow />} start>
               Start now
             </Button>
-            <H6 className="Wales">
-              <Paragraph mb={0}>
+            {/* <Paragraph mb={0}>
                 This page is also available in [Welsh(Cymraeg)](https://en.wikipedia.org/wiki/Markdown).
-              </Paragraph>
-            </H6>
+              </Paragraph> */}
+            <p>
+              This page is also available in{" "}
+              <a href="https://en.wikipedia.org/wiki/Markdown">
+                {" "}
+                Welsh (Cymraeg)
+              </a>
+            </p>
+            <br />
+            <H3> Before you start</H3>
+            <Paragraph>You must have lived in England, Wales or Scotland for at least 185 days in the last 12 months before the day you take your theory or driving test.</Paragraph>
+            <br />
+            <Paragraph>Car and motorcycle tests cost £23.</Paragraph>
             <br />
             <H4>Additional Info:</H4>
             <orderedList className="ListSize">
               <ListItem className="ListItemLeft">
-                Call us on 4235903409 from 8-6{" "}
+                Call us on 0300 200 1122 from 8am to 4pm
               </ListItem>
               <ListItem className="ListItemLeft">
-                Email us at ergdrgerg@gov.uk
-              </ListItem>
-              <ListItem className="ListItemLeft">
-                Send a Carrier Pigeon to captain driving.
+                Email us at theorycustomerservices@dvsa.gov.uk
               </ListItem>
             </orderedList>
           </div>
@@ -66,7 +90,9 @@ export default function Home() {
             </UnorderedList>
           </div>
         </div>
-        <div className="Footer">
+
+      </Page>
+      <div className="Footer">
           <Footer
             meta={
               <Footer.MetaCustom>
@@ -76,7 +102,6 @@ export default function Home() {
             }
           />
         </div>
-      </Page>
     </div>
   );
 }

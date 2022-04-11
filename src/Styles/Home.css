@@ -15,13 +15,14 @@ html{
     min-height: 100vh;
     margin: 0;
     padding: 0;
+    margin-bottom: auto;
 
 }
 
 .Footer{
+    position: absolute;
     text-align: left; 
-    width : 100%;
-    position: fixed;
+    height: 7.5em;
     left: 0;
     bottom: 0;
     right: 0;
@@ -41,10 +42,17 @@ html{
 .LeftInfo{
     
     width:100%;
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
 }
 
 .RightInfo{
     width:100%;
+    padding: 30px;
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
 }
 
 
@@ -67,6 +75,11 @@ html{
     text-align: left;
     padding: 0;
     margin: 0;
+}
+
+.needsList{
+    width: 500px;
+
 }
 
 /*Book your driving theory test for:
