@@ -1,6 +1,98 @@
-.Home{
-    text-align: left; 
-    display: flex;
-    min-height: 100vh;
+body{
+    height: 100%;
+    width: 100%;
 }
 
+html{
+    height: 100%;
+    width: 100%;
+}
+
+.Home{
+    text-align: left; 
+    width : 100%;
+    position: absolute;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    margin-bottom: auto;
+
+}
+
+.Footer{
+    position: absolute;
+    text-align: left; 
+    height: 7.5em;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+}
+
+.Container{
+    text-align: left;
+    display: flex; 
+    flex-direction: row;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    left: 0;
+}
+
+.LeftInfo{
+    
+    width:100%;
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
+}
+
+.RightInfo{
+    width:100%;
+    padding: 30px;
+    min-height: 400px;
+    margin-bottom: 100px;
+    clear: both;
+}
+
+
+.ListSize{
+    margin: 0;
+    padding: 0;
+    transform: scale(0.7);
+}
+.ListItemLeft{
+    
+    margin-left: 12px;
+    padding: 0;
+    text-align: left;
+}
+
+.Wales{
+    position: relative;
+    left: 0;
+    transform: scale(0.7);
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+.needsList{
+    width: 500px;
+
+}
+
+/*Book your driving theory test for:
+
+cars
+motorcycles
+lorries, buses and coaches
+You must have lived in England, Wales or Scotland for at least 185 days in the last 12 months before the day you take your theory or driving test.
+
+Car and motorcycle tests cost £23.
+
+Lorry and bus tests cost:
+
+part 1a (multiple-choice questions) - £26
+part 1b (hazard perception) - £11
+part 2 (case studies) - £23*/
