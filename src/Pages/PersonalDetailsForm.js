@@ -3,7 +3,7 @@
 import axios from "axios";
 import "../Styles/PersonalDetailsForm.css";
 import React, { useEffect } from "react";
-import { Page, H2, DateField } from "govuk-react";
+import { Page, H2, DateField, ErrorSummary } from "govuk-react";
 import "../Styles/Home.css";
 import {
   Button,
@@ -29,14 +29,13 @@ export default function PersonalDetailsForm() {
   const [time, setTime] = React.useState("");
   const [location, setLocation] = React.useState("");
   const [date, setDate] = React.useState("");
-  const [pln, setPln] = React.useState(""); /*provisional license number*/
+  const [pln, setPln] = React.useState(""); //provisional license number
   const [email, setEmail] = React.useState("");
+  const [formInvalid, setFormInvalid] = React.useState(false);
+
 
   const putInfoToDatabase = async () => {
-    /* e.preventDefault(); */
-
-    // store the states in the form data
-
+    console.log ("Post request is being run");
     const userAppointmentInfo = new Object();
 
     userAppointmentInfo["firstName"] = firstName;
@@ -64,11 +63,18 @@ export default function PersonalDetailsForm() {
       console.log(error);
     }
   };
+  const submitForm = (e) => {
+    if (firstName && lastName && postcode && time && location && date && pln && email){
+      setFormInvalid(false);
+      putInfoToDatabase();
+    }else{
+      setFormInvalid(true);
+    }
+  };
+
 
   const handleChangeTime = (e) => {
-    if (e.target.value.length !== 0) {
-      setTime(e.target.value.trim());
-    }
+    setTime(e.target.value.trim());
   };
 
   const handleChangeDate = (e) => {
@@ -102,6 +108,14 @@ export default function PersonalDetailsForm() {
   return (
     <div className="PersonalForm">
       <Page>
+      {formInvalid &&  ( <ErrorSummary
+  errors={[
+    {
+      text: 'You must enter these details as they appear on your provisional driving license'
+    }
+  ]}
+  heading="There is a problem "
+/>)}
         <H2>Complete Personal Detail Form:</H2>
 
         {/*<Link to="/booking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
@@ -195,7 +209,7 @@ export default function PersonalDetailsForm() {
 
           <br />
 
-          <Button onClick={putInfoToDatabase}>Submit</Button>
+          <Button onClick={submitForm}>Submit</Button>
         </div>
       </Page>
 
