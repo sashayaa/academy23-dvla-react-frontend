@@ -1,0 +1,45 @@
+body{
+    height: 100%;
+    width: 100%;
+}
+
+html{
+    height: 100%;
+    width: 100%;
+}
+
+ .info{
+    text-align: left;
+    width : 100%;
+    position: absolute;
+    margin: 0; 
+    padding: 0;
+    margin-bottom: auto;
+    padding: 4em;
+} 
+
+.viewingtable{
+    padding: 20em; 
+    margin-bottom: 1em;
+}
+
+.button{
+    margin-top: 0.35em;
+    margin-bottom: 1em;
+}
+
+.ViewBookingpage{
+
+    position: relative;
+
+
+}
+
+.Footer{
+    position: absolute; 
+    text-align: left; 
+    height: 7.5em;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}

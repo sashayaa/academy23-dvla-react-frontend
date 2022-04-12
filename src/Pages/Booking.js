@@ -56,7 +56,9 @@ const Booking = () => {
 
             <div className="Right">
               <H3>Already booked?</H3>
-              <Button>See Details Here</Button>
+              <Link to="/viewbooking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
+              See details here
+            </Button></Link>
 
               <Paragraph>
                 [Cancel](http://localhost:3000/cancel) or
