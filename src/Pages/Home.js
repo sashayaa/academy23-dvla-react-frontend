@@ -59,7 +59,9 @@ export default function Home() {
           </div>
           <div className="RightInfo">
             <H2> Already Booked?</H2>
-            <Button>See details here</Button>
+            <Link to="/viewbooking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
+              See details here
+            </Button></Link>
             <Paragraph>
               [Cancel](http://localhost:3000/cancel) or
               [reschedule](https://en.wikipedia.org/wiki/Markdown) your booked
