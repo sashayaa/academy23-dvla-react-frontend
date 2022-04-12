@@ -63,9 +63,9 @@ export default function PersonalDetailsForm() {
       console.log(error);
     }
   };
+
   const submitForm = (e) => {
     if (firstName && lastName && postcode && time && location && date && pln && email){
-      setFormInvalid(false);
       putInfoToDatabase();
     }else{
       setFormInvalid(true);
@@ -105,10 +105,14 @@ export default function PersonalDetailsForm() {
     setPln(e.target.value.trim());
   };
 
+  const showMeTheDate = (date) => {
+    console.log(date);
+  };
+
   return (
     <div className="PersonalForm">
       <Page>
-      {formInvalid &&  ( <ErrorSummary
+      {formInvalid && ( <ErrorSummary
   errors={[
     {
       text: 'You must enter these details as they appear on your provisional driving license'
@@ -118,9 +122,7 @@ export default function PersonalDetailsForm() {
 />)}
         <H2>Complete Personal Detail Form:</H2>
 
-        {/*<Link to="/booking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
-              Start now
-  </Button></Link>*/}
+       
 
         <div className="Form">
           <Label>
@@ -186,6 +188,8 @@ export default function PersonalDetailsForm() {
             <ErrorText></ErrorText>
             <Input onChange={handleChangeDate} value={date}/>
           </Label>
+          <br/>
+          <DateField input={{onChange: (date) => /*console.log(date, "<-- date")*/ date}} onChange={showMeTheDate}/>
 
           <br />
 
@@ -209,7 +213,12 @@ export default function PersonalDetailsForm() {
 
           <br />
 
-          <Button onClick={submitForm}>Submit</Button>
+          <Button onClick={submitForm}>Submit</Button> 
+
+
+          {/*<Link to="/booking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
+              Start now
+  </Button></Link>*/}
         </div>
       </Page>
 
