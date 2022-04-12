@@ -16,7 +16,7 @@ import {
 import { Footer } from "govuk-react";
 import { Link } from "react-router-dom";
 
-const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata/";
+const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata";
 
 export default function PersonalDetailsForm() {
   useEffect(() => {
@@ -29,32 +29,36 @@ export default function PersonalDetailsForm() {
   const [time, setTime] = React.useState("");
   const [location, setLocation] = React.useState("");
   const [date, setDate] = React.useState("");
-  const [pln, setPln] = React.useState("");
+  const [pln, setPln] = React.useState(""); /*provisional license number*/
   const [email, setEmail] = React.useState("");
 
   const putInfoToDatabase = async () => {
     /* e.preventDefault(); */
 
     // store the states in the form data
-    const userAppointmentInfo = new FormData();
-    userAppointmentInfo.append("firstName", firstName);
-    userAppointmentInfo.append("lastName", lastName);
-    userAppointmentInfo.append("drivingLicenseNumber", pln);
-    userAppointmentInfo.append("postCode", postcode);
-    userAppointmentInfo.append("emailAddress", email);
-    userAppointmentInfo.append("appointmentDate", date);
-    userAppointmentInfo.append("appointementTime", time);
-    userAppointmentInfo.append("appointmentLocation", location);
+    
+    const userAppointmentInfo = new Object();
+    
+    userAppointmentInfo['firstName'] = firstName;
+    userAppointmentInfo['lastName'] = lastName;
+    userAppointmentInfo['drivingLicenseNumber'] = pln;
+    userAppointmentInfo['postCode'] = postcode;
+    userAppointmentInfo['emailAddress'] =  email;
+    userAppointmentInfo['appointmentDate'] = date;
+    userAppointmentInfo['appointmentTime'] = time;
+    userAppointmentInfo['appointmentLocation'] = location;
 
+    const userAppointmentJson = JSON.stringify(userAppointmentInfo);
     console.log(userAppointmentInfo);
+    console.log(userAppointmentJson);
 
     try {
       // make axios post request
       const response = await axios({
         method: "post",
         url: baseURL,
-        data: "{foo: \"bar\"}",
-        headers: { "Content-Type": "multipart/form-data" },
+        data: userAppointmentJson,
+        headers: { 'Content-Type': 'application/json' },
       });
     } catch (error) {
       console.log(error);

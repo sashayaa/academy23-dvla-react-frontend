@@ -1,7 +1,8 @@
 import React, { useEffect } from "react";
 import { Page, BackLink, H2, H3, H4, Paragraph } from "govuk-react";
-import { OrderedList, ListItem, InsetText, Link } from "govuk-react";
+import { OrderedList, ListItem, InsetText} from "govuk-react";
 import { Footer, Button, ButtonArrow, SectionBreak } from "govuk-react";
+import { Link } from "react-router-dom"; //do not delete this line or merge it with gov-uk-react imports!
 import "../Styles/Booking.css";
 
 const Booking = () => {
