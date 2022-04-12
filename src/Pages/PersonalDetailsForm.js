@@ -3,7 +3,7 @@
 import axios from "axios";
 import "../Styles/PersonalDetailsForm.css";
 import React, { useEffect } from "react";
-import { Page, H2 } from "govuk-react";
+import { Page, H2, DateField } from "govuk-react";
 import "../Styles/Home.css";
 import {
   Button,
@@ -36,17 +36,17 @@ export default function PersonalDetailsForm() {
     /* e.preventDefault(); */
 
     // store the states in the form data
-    
+
     const userAppointmentInfo = new Object();
-    
-    userAppointmentInfo['firstName'] = firstName;
-    userAppointmentInfo['lastName'] = lastName;
-    userAppointmentInfo['drivingLicenseNumber'] = pln;
-    userAppointmentInfo['postCode'] = postcode;
-    userAppointmentInfo['emailAddress'] =  email;
-    userAppointmentInfo['appointmentDate'] = date;
-    userAppointmentInfo['appointmentTime'] = time;
-    userAppointmentInfo['appointmentLocation'] = location;
+
+    userAppointmentInfo["firstName"] = firstName;
+    userAppointmentInfo["lastName"] = lastName;
+    userAppointmentInfo["drivingLicenseNumber"] = pln;
+    userAppointmentInfo["postCode"] = postcode;
+    userAppointmentInfo["emailAddress"] = email;
+    userAppointmentInfo["appointmentDate"] = date;
+    userAppointmentInfo["appointmentTime"] = time;
+    userAppointmentInfo["appointmentLocation"] = location;
 
     const userAppointmentJson = JSON.stringify(userAppointmentInfo);
     console.log(userAppointmentInfo);
@@ -58,7 +58,7 @@ export default function PersonalDetailsForm() {
         method: "post",
         url: baseURL,
         data: userAppointmentJson,
-        headers: { 'Content-Type': 'application/json' },
+        headers: { "Content-Type": "application/json" },
       });
     } catch (error) {
       console.log(error);
@@ -66,7 +66,9 @@ export default function PersonalDetailsForm() {
   };
 
   const handleChangeTime = (e) => {
-    setTime(e.target.value.trim());
+    if (e.target.value.length !== 0) {
+      setTime(e.target.value.trim());
+    }
   };
 
   const handleChangeDate = (e) => {
@@ -157,7 +159,7 @@ export default function PersonalDetailsForm() {
             </LabelText>
             <HintText>For example, DHILL787FTT8RT89.</HintText>
             <ErrorText></ErrorText>
-            <Input onChange={handleChangePln} value={pln}/>
+            <Input onChange={handleChangePln} value={pln} />
           </Label>
 
           <br />
@@ -168,7 +170,7 @@ export default function PersonalDetailsForm() {
             </LabelText>
             <HintText>Example hint</HintText>
             <ErrorText></ErrorText>
-            <Input onChange={handleChangeDate} value={date} />
+            <Input onChange={handleChangeDate} value={date}/>
           </Label>
 
           <br />
@@ -188,7 +190,7 @@ export default function PersonalDetailsForm() {
               <b>Preferable time:</b>
             </LabelText>
             <ErrorText></ErrorText>
-            <Input onChange={handleChangeTime} value={time}/>
+            <Input onChange={handleChangeTime} value={time} />
           </Label>
 
           <br />
