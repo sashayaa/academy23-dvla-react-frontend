@@ -12,9 +12,9 @@ import {
   LabelText,
   HintText,
   ErrorText,
+  Footer
 } from "govuk-react";
-import { Footer } from "govuk-react";
-import { Link } from "react-router-dom";
+import { Navigate } from 'react-router-dom';
 
 const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata";
 
@@ -32,6 +32,7 @@ export default function PersonalDetailsForm() {
   const [pln, setPln] = React.useState(""); //provisional license number
   const [email, setEmail] = React.useState("");
   const [formInvalid, setFormInvalid] = React.useState(false);
+  const [redirect, setRedirect] = React.useState();
 
 
   const putInfoToDatabase = async () => {
@@ -59,6 +60,7 @@ export default function PersonalDetailsForm() {
         data: userAppointmentJson,
         headers: { "Content-Type": "application/json" },
       });
+      console.log("looks like this has been submitted");
     } catch (error) {
       console.log(error);
     }
@@ -67,6 +69,8 @@ export default function PersonalDetailsForm() {
   const submitForm = (e) => {
     if (firstName && lastName && postcode && time && location && date && pln && email){
       putInfoToDatabase();
+      setFormInvalid(false);
+      setRedirect(true);
     }else{
       setFormInvalid(true);
     }
@@ -108,6 +112,21 @@ export default function PersonalDetailsForm() {
   const showMeTheDate = (date) => {
     console.log(date);
   };
+
+
+
+
+
+if (redirect) {
+  return (
+    <Navigate
+      to={{
+        pathname: "/confirmation",
+      }}
+    />
+  );
+}
+
 
   return (
     <div className="PersonalForm">
