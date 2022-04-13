@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { useEffect, useState, react } from "react";
+import { useEffect, useState, react, CellHeader } from "react";
 import "../Styles/ViewBooking.css";
 import {
   TopNav,
@@ -68,9 +68,12 @@ export default function ViewBooking() {
       />
       <div className="info"> 
           <H3>Need to view your appointment information?</H3>
-          <Paragraph> If you need to view your appointment details, enter your reference number in the search box below.
+        <div className="textinfo">
+          <Paragraph mb={0}> If you need to view your appointment details, enter your reference number in the search box below. If there are any
+              issues with your booking please contact us as soon as possible at [theorycustomerservices@dvsa.gov.uk]("mailto:theorycustomerservices@dvsa.gov.uk").
           </Paragraph>
-      </div>    
+          </div>
+          </div>
 
       <div className="viewingtable">
         <Label>
@@ -86,27 +89,27 @@ export default function ViewBooking() {
         {post && requestState === true && (
           <Table className="tablestyling">
             <Table.Row>
-              <H5>Reference Number</H5>
+              <Table.CellHeader>Reference Number</Table.CellHeader>
               <Table.Cell>{post.id}</Table.Cell>
             </Table.Row>
             <Table.Row>
-              <H5>First Name</H5>
+              <Table.CellHeader>First Name</Table.CellHeader>
               <Table.Cell>{post.firstName}</Table.Cell>
             </Table.Row>
             <Table.Row>
-              <H5>Last Name</H5>
+              <Table.CellHeader>Last Name</Table.CellHeader>
               <Table.Cell>{post.lastName}</Table.Cell>
             </Table.Row>
             <Table.Row>
-              <H5>Appointment Date</H5>
+              <Table.CellHeader>Appointment Date</Table.CellHeader>
               <Table.Cell>{post.appointmentDate}</Table.Cell>
             </Table.Row>
             <Table.Row>
-              <H5>Appointment Time</H5>
+              <Table.CellHeader>Appointment Time</Table.CellHeader>
               <Table.Cell>{post.appointmentTime}</Table.Cell>
             </Table.Row>
             <Table.Row>
-              <H5>Appointment Location</H5>
+              <Table.CellHeader>Appointment Location</Table.CellHeader>
               <Table.Cell>{post.appointmentLocation}</Table.Cell>
             </Table.Row>
           </Table>
