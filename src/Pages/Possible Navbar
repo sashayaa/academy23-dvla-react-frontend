@@ -1,0 +1,10 @@
+    <div className="ViewBookingpage">
+      <TopNav
+        company={
+          <TopNav.Anchor href="localhost:3000" target="new">
+            <TopNav.IconTitle /*icon={<Crown height="32" width="36"/>}*/>
+              GOV.UK
+            </TopNav.IconTitle>
+          </TopNav.Anchor>
+        }
+        /*serviceTitle={<TopNav.NavLink href="https://example.com" target="new">Service Title</TopNav.NavLink>}*/

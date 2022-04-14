@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 // const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata";
 
-export default function Home() {
+export default function WelshHome() {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
@@ -20,63 +20,62 @@ export default function Home() {
       <Page>
         <div className="Container">
           <div className="LeftInfo">
-            <H2 class>Book your theory test online</H2>
+            <H2 class>Archebwch eich prawf theori ar-lein</H2>
 
-            <H3> You will need your:</H3>
+            <H3> Bydd angen eich:</H3>
 
             <OrderedList className= "needsList" listStyleType="bullet">
-              <ListItem>UK driving license number </ListItem>
-              <ListItem>email address</ListItem>
-              <ListItem>credit or debit card</ListItem>
+              <ListItem>Rhif trwydded yrru'r DU </ListItem>
+              <ListItem>cyfeiriad ebost</ListItem>
+              <ListItem>cerdyn credyd neu ddebyd</ListItem>
             </OrderedList>
 
-            <Link to="/booking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
-              Start now
+            <Link to="/welshbooking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
+            Dechreuwch nawr
             </Button></Link>
       
             <p>
-              This page is also available in{" "}
-              <a href="https://driving-theory-booking.herokuapp.com/welshhome">
+            Mae'r dudalen hon hefyd ar gael yn{" "}
+              <a href="https://en.wikipedia.org/wiki/Markdown">
                 {" "}
-                Welsh (Cymraeg)
+                Saesneg (English)
               </a>
             </p>
             <br />
-            <H3> Before you start</H3>
-            <Paragraph>You must have lived in England, Wales or Scotland for at least 185 days in the last 12 months before the day you take your theory or driving test.</Paragraph>
+            <H3> Cyn i chi ddechrau</H3>
+            <Paragraph>Mae'n rhaid eich bod wedi byw yng Nghymru, Lloegr neu'r Alban am o leiaf 185 diwrnod yn ystod y 12 mis diwethaf cyn y diwrnod y cymerwch eich prawf theori neu yrru.</Paragraph>
             <br />
-            <Paragraph>Car and motorcycle tests cost £23.</Paragraph>
+            <Paragraph>Mae profion ceir a beiciau modur yn costio £23.</Paragraph>
             <br />
-            <H4>Additional Info:</H4>
+            <H4>Gwybodaeth ychwanegol:</H4>
             <orderedList className="ListSize">
               <ListItem className="ListItemLeft">
-                Call us on 0300 200 1122 from 8am to 4pm
+              Ffoniwch ni ar 0300 200 1122 rhwng 8am a 4pm
               </ListItem>
               <ListItem className="ListItemLeft">
-                Email us at theorycustomerservices@dvsa.gov.uk
+              E-bostiwch ni yn theorycustomerservices@dvsa.gov.uk
               </ListItem>
             </orderedList>
           </div>
           <div className="RightInfo">
-            <H2> Already Booked?</H2>
+            <H2> Wedi Archebu Eisoes?</H2>
             <Link to="/viewbooking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
-              See details here
+            Gweler y manylion yma
             </Button></Link>
             <Paragraph>
-              [Cancel](http://localhost:3000/cancel) or
-              [reschedule](https://en.wikipedia.org/wiki/Markdown) your booked
-              test using a reference number from:
+            [Canslo](http://localhost:3000/cancel) neu
+              [aildrefnu](https://en.wikipedia.org/wiki/Markdown) eich prawf a archebwyd gan ddefnyddio rhif cyfeirnod oddi wrth:
             </Paragraph>
             <OrderedList listStyleType="bullet">
-              <ListItem>A recent reminder letter from DVLA.</ListItem>
-              <ListItem>Confirmation e-mail from DVLA.</ListItem>
+              <ListItem>Llythyr atgoffa diweddar gan DVLA.</ListItem>
+              <ListItem>E-bost cadarnhad gan DVLA.</ListItem>
             </OrderedList>
-            <H2>Related Topics</H2>
+            <H2>Pynciau Cysylltiedig</H2>
             <UnorderedList listStyleType="none">
-              <ListItem>Passing your Practical test</ListItem>
-              <ListItem>Trusted insurance providers</ListItem>
-              <ListItem>Driving licence renewal</ListItem>
-              <ListItem>How to buy a batmobile</ListItem>
+              <ListItem>Pasio eich Prawf Ymarferol</ListItem>
+              <ListItem>Darparwyr yswiriant dibynadwy</ListItem>
+              <ListItem>Adnewyddu trwydded yrru</ListItem>
+              <ListItem>Sut i brynu batmobile</ListItem>
             </UnorderedList>
           </div>
         </div>

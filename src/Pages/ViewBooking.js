@@ -7,7 +7,7 @@ import {
   NavLink,Label,LabelText,ErrorText,HintText,
   Anchor,
   IconTitle,
-  Page, Paragraph,
+  Page, Paragraph,ButtonArrow,BackLink,
   Footer,
   Table,
   Cell,
@@ -48,32 +48,18 @@ export default function ViewBooking() {
     });
   }, [requestState, dummyClientId]);
 
-  //   if (!post) return "Error";
-
-  // const dummyClientOnlyData = posts.filter(post => post.id === dummyClientId);
-  /*{posts.map((post) => (*/
-  /*key={dummyClientOnlyData.id}*/
-
   return (
-    <div className="ViewBookingpage">
-      <TopNav
-        company={
-          <TopNav.Anchor href="localhost:3000" target="new">
-            <TopNav.IconTitle /*icon={<Crown height="32" width="36"/>}*/>
-              GOV.UK
-            </TopNav.IconTitle>
-          </TopNav.Anchor>
-        }
-        /*serviceTitle={<TopNav.NavLink href="https://example.com" target="new">Service Title</TopNav.NavLink>}*/
-      />
+        <div className="ViewBookingpage">
+      <Page beforeChildren={<BackLink href="/Booking">Back</BackLink>}> </Page>
       <div className="info"> 
-          <H3>Need to view your appointment information?</H3>
+          
         <div className="textinfo">
+          <H3>Need to view your appointment information?</H3>
           <Paragraph mb={0}> If you need to view your appointment details, enter your reference number in the search box below. If there are any
               issues with your booking please contact us as soon as possible at [theorycustomerservices@dvsa.gov.uk]("mailto:theorycustomerservices@dvsa.gov.uk").
           </Paragraph>
-          </div>
-          </div>
+          
+        </div></div>
 
       <div className="viewingtable">
         <Label>
@@ -86,6 +72,7 @@ export default function ViewBooking() {
         <div className="button"> 
         <Button onClick={runAxiosRequest}>Submit</Button>
         </div>
+      
         {post && requestState === true && (
           <Table className="tablestyling">
             <Table.Row>
@@ -113,8 +100,15 @@ export default function ViewBooking() {
               <Table.Cell>{post.appointmentLocation}</Table.Cell>
             </Table.Row>
           </Table>
-        )}
+        )}  
+        <div className= "reschedule">
+            <Paragraph>If you need to reschedule your appointment please follow this link and have your reference number ready.</Paragraph>
+          <Link to="/Reschedule" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
+                Reschedule
+              </Button></Link>
+        </div>
       </div>
+
 
       <div className="Footer">
         <Footer

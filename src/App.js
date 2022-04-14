@@ -8,6 +8,9 @@ import PersonalDetailsForm from './Pages/PersonalDetailsForm';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ViewBooking from './Pages/ViewBooking';
 import Confirmation from './Pages/Confirmation';
+import WelshHome from './Pages/WelshHome';
+import WelshBooking from './Pages/WelshBooking';
+import WelshPersonalDetails from './Pages/WelshPersonalDetails';
 //const axios = require('axios').default;
 
 
@@ -22,7 +25,10 @@ function App() {
           <Route exact path="/reschedule" element={ <Reschedule/> } />
           <Route exact path="/viewbooking" element={ <ViewBooking/> } />    
           <Route exact path="/personaldetailsform" element={ <PersonalDetailsForm/> } />  
-          <Route exact path="/confirmation" element={ <Confirmation/> } />     
+          <Route exact path="/confirmation" element={ <Confirmation/> } />   
+          <Route exact path="/WelshHome" element={ <WelshHome/> } />   
+          <Route exact path="/WelshBooking" element={ <WelshBooking/> } />
+          <Route exact path="/WelshPersonalDetails" element={ <WelshPersonalDetails/> } />  
         </Routes>
       </div>
      
