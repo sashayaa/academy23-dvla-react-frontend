@@ -59,16 +59,6 @@ html{
     position: relative;
 }
 
-.Footer{
-    position: relative; 
-    width: 100%;
-    text-align: left; 
-    height: 7.5em;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
 .tablestyling{
     transform: scale(0.9);
 }

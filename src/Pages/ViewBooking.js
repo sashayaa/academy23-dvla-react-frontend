@@ -110,15 +110,8 @@ export default function ViewBooking() {
       </div>
 
 
-      <div className="Footer">
-        <Footer
-          meta={
-            <Footer.MetaCustom>
-              Built by the{" "}
-              <Footer.Link href="/">Government Digital Service</Footer.Link>
-            </Footer.MetaCustom>
-          }
-        />
+      <div>
+        <Footer meta={<Footer.MetaCustom>Built by the{' '}<Footer.Link href="/">Government Digital Service</Footer.Link></Footer.MetaCustom>} />
       </div>
     </div>
   );
