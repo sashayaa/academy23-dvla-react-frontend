@@ -4,25 +4,17 @@ import { setUpdatedAt } from "axios";
 import { useEffect, useState, react, CellHeader } from "react";
 import "../Styles/Reschedule.css";
 import {
-  TopNav,
-  NavLink,
   Label,
   LabelText,
   ErrorText,
   HintText,
-  Anchor,
-  IconTitle,
   Page,
   Paragraph,
   ButtonArrow,
   BackLink,
   Footer,
   Table,
-  Cell,
-  Row,
-  H5,
   H3,
-  H4,
   Button,
   Input,
 } from "govuk-react";
@@ -31,13 +23,58 @@ import { Link, BrowserRouter } from "react-router-dom";
 const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata";
 
 export default function Reschedule() {
+
+  useEffect(() => {
+    window.scroll(0, 0);
+  }, []);
+
   const [post, setPost] = React.useState(null);
   const [requestState, setRequestState] = React.useState(false);
-  const [dummyClientId, setDummyClientId] = React.useState(2);
+  const [dummyClientId, setDummyClientId] = React.useState();
   const [dvlaReference, setDvlaReference] = React.useState("");
+  const [time, setTime] = React.useState("");
+  const [date, setDate] = React.useState("");
+  const [location, setLocation] = React.useState("");
+
+
+  const updateDatabase = async () => {
+    console.log ("Put request is being run");
+    const userAppointmentInfo = new Object();
+
+    userAppointmentInfo["appointmentDate"] = date;
+    userAppointmentInfo["appointmentTime"] = time;
+    userAppointmentInfo["appointmentLocation"] = location;
+
+    const userAppointmentJson = JSON.stringify(userAppointmentInfo);
+    console.log(userAppointmentInfo);
+    console.log(userAppointmentJson);
+
+    try {
+      // make axios post request
+      const response = await axios({
+        method: "put",
+        url: baseURL,
+        data: userAppointmentJson,
+        headers: { "Content-Type": "application/json" },
+      });
+      console.log("Looks like this has been submitted");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+
 
   const handleChange = (e) => {
     setDvlaReference(e.target.value.trim());
+  };
+
+  const handleChangeNewDate = (e) => {
+    setDate(e.target.value.trim());
+  };
+
+  const handleChangeNewTime = (e) => {
+    setDate(e.target.value.trim());
   };
 
   const runAxiosRequest = (e) => {
@@ -122,7 +159,7 @@ export default function Reschedule() {
                 </LabelText>
                 <ErrorText></ErrorText>
                 <HintText>For example, 21 10 2022</HintText>
-                <Input onChange={handleChange} />
+                <Input onChange={handleChangeNewDate} value={date} />
               </Label>
 
               <br />
@@ -134,7 +171,19 @@ export default function Reschedule() {
                 </LabelText>
                 <ErrorText></ErrorText>
                 <HintText>For example, 11:20</HintText>
-                <Input onChange={handleChange} />
+                <Input onChange={handleChangeNewTime} value={time} />
+              </Label>
+
+              <br />
+              <br />
+
+              <Label className="LocationChange">
+                <LabelText>
+                  <b>Choose new location or choose the same:</b>
+                </LabelText>
+                <ErrorText></ErrorText>
+                <HintText></HintText>
+                <Input onChange={handleChangeNewTime} value={location} />
               </Label>
 
 
