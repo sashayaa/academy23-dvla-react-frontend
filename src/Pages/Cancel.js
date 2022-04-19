@@ -83,7 +83,7 @@ if (redirect) {
         <div className="textinfo">
           <H3>Need to cancel Your appointment?</H3>
           <Paragraph>
-         Please confirm your details to and then follow the link to cancel
+            Please confirm your details to and then follow the link to cancel
             your appointment. Once deleted you will not be able to undo this and
             will have to begin the booking process from the beginning.
           </Paragraph>
@@ -95,7 +95,6 @@ if (redirect) {
           <LabelText>
             <b>Reference Number</b>
           </LabelText>
-          <ErrorText></ErrorText>
           <Input onChange={handleChange} />
         </Label>
         {/* <div className="button">  */}
