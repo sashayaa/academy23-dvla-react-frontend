@@ -81,14 +81,11 @@ if (redirect) {
       </Page>
       <div className="info">
         <div className="textinfo">
-          <H3>Need to cancel you appointment?</H3>
-          <Paragraph mb={0}>
-            {" "}
-            If you need to cancel your appointment you can do so by entering
-            your reference number, reviewing the appointment information and
-            then confirming that you would like to cancel your appointment. An
-            email confirming the cancellation will be sent to you shortly
-            afterwards.
+          <H3>Need to cancel Your appointment?</H3>
+          <Paragraph>
+         Please confirm your details to and then follow the link to cancel
+            your appointment. Once deleted you will not be able to undo this and
+            will have to begin the booking process from the beginning.
           </Paragraph>
         </div>
       </div>
@@ -134,11 +131,6 @@ if (redirect) {
           </Table>
         )}   */}
         <div className="reschedule">
-          <Paragraph>
-            Please confirm your details to and then follow the link to cancel
-            your appointment. Once deleted you will not be able to undo this and
-            will have to begin the booking process from the beginning.
-          </Paragraph>
           
             <Button onClick={deleteBooking} icon={<ButtonArrow />} start>
               Confirm Cancellation

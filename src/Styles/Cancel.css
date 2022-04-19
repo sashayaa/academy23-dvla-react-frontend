@@ -10,7 +10,7 @@ html{
 }
 
 .textinfo{
-    text-align-last: left;
+    text-align: left;
     width: 65%;
     position: absolute;
     margin: 0; 
@@ -20,8 +20,8 @@ html{
     padding-left: 17em;
 } 
 
-/* .textinfo{
-    text-align: center;
+  .textinfo{
+    text-align: left;
     text-align-last: center;
     width: 50%;
     position: inherit;
@@ -30,11 +30,12 @@ html{
     margin-bottom: auto;
     padding: 4em;
     padding-left: 22em;
-}  */
+}  
 
 .reschedule{
     text-align: left;
     width: 100%;
+    padding-top: 2em;
     /* position: relative; */
     margin: 0; 
     /* transform: scale(0.9); */
