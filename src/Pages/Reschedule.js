@@ -146,7 +146,7 @@ export default function Reschedule() {
                 to="/rescheduleconfirmation"
                 style={{ textDecoration: "none" }}
               >
-                <Button icon={<ButtonArrow />} start>
+                <Button onClick={this.editItem} icon={<ButtonArrow />} start>
                   Confirm
                 </Button>
               </Link>
