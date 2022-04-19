@@ -1,0 +1,14 @@
+.Body{
+    display: flex;
+    /* flex-direction: row; */
+}
+
+.DateChange{
+    width: 20em;
+    
+}
+
+.TimeChange{
+    width: 20em;
+    
+}
