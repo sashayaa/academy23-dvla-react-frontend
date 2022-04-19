@@ -39,22 +39,25 @@ html{
     left: 0; */
 }
 
-.Left{
-    
-    width: 70%;
-    /* min-height: 400px;
-    margin-bottom: 100px;
-    clear: both; */
-}
-
 .Right{
     align-items: right;
+    margin-left: 30px;
+    margin-top: 10px;
     /* width:100%;
     padding: 30px;
     min-height: 400px;
     margin-bottom: 100px;
     clear: both; */
 }
+
+.Left{
+    width: 70%;
+    /* min-height: 400px;
+    margin-bottom: 100px;
+    clear: both; */
+}
+
+
 
 
 /* .ListSize{
