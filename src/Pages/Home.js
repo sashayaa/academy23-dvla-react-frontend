@@ -1,11 +1,7 @@
 // import axios from 'axios';
 import React, { useEffect } from "react";
-import { Page, H2, UnorderedList, H4, H3 } from "govuk-react";
+import { Page, H2, UnorderedList, Footer, H4, H3, Paragraph, OrderedList, ListItem, Button, ButtonArrow, SectionBreak } from "govuk-react";
 import "../Styles/Home.css";
-import { Paragraph } from "govuk-react";
-import { OrderedList, ListItem } from "govuk-react";
-import { Button, ButtonArrow } from "govuk-react";
-import { Footer } from "govuk-react";
 import { Link } from "react-router-dom";
 
 // const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata";
@@ -18,22 +14,22 @@ export default function Home() {
   return (
     <div className="Home">
       <Page>
-        <div className="Container">
-          <div className="LeftInfo">
+        <div className="Body">
+          <div className="Left">
             <H2 class>Book your theory test online</H2>
 
             <H3> You will need your:</H3>
 
-            <OrderedList className= "needsList" listStyleType="bullet">
+            <OrderedList className="needsList" listStyleType="bullet">
               <ListItem>UK driving license number </ListItem>
               <ListItem>email address</ListItem>
               <ListItem>credit or debit card</ListItem>
             </OrderedList>
 
-            <Link to="/booking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
+            <Link to="/booking" style={{ textDecoration: 'none' }} ><Button icon={<ButtonArrow />} start>
               Start now
             </Button></Link>
-      
+
             <p>
               This page is also available in{" "}
               <a href="https://driving-theory-booking.herokuapp.com/welshhome">
@@ -57,9 +53,9 @@ export default function Home() {
               </ListItem>
             </orderedList>
           </div>
-          <div className="RightInfo">
-            <H2> Already Booked?</H2>
-            <Link to="/viewbooking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
+          <div className="Right">
+            <H3> Already Booked?</H3>
+            <Link to="/viewbooking" style={{ textDecoration: 'none' }} ><Button icon={<ButtonArrow />} start>
               See details here
             </Button></Link>
             <Paragraph>
@@ -71,7 +67,8 @@ export default function Home() {
               <ListItem>A recent reminder letter from DVLA.</ListItem>
               <ListItem>Confirmation e-mail from DVLA.</ListItem>
             </OrderedList>
-            <H2>Related Topics</H2>
+            <SectionBreak level="LARGE" visible />
+            <H4>Related Topics</H4>
             <UnorderedList listStyleType="none">
               <ListItem>Passing your Practical test</ListItem>
               <ListItem>Trusted insurance providers</ListItem>
@@ -82,16 +79,16 @@ export default function Home() {
         </div>
 
       </Page>
-      <div className="Footer">
-          <Footer
-            meta={
-              <Footer.MetaCustom>
-                Built by the{" "}
-                <Footer.Link href="/">Government Digital Service</Footer.Link>
-              </Footer.MetaCustom>
-            }
-          />
-        </div>
+
+      <Footer
+        meta={
+          <Footer.MetaCustom>
+            Built by the{" "}
+            <Footer.Link href="/">Government Digital Service</Footer.Link>
+          </Footer.MetaCustom>
+        }
+      />
+
     </div>
   );
 }

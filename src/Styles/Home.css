@@ -1,4 +1,4 @@
-body{
+/* body{
     height: 100%;
     width: 100%;
 }
@@ -6,9 +6,9 @@ body{
 html{
     height: 100%;
     width: 100%;
-}
+} */
 
-.Home{
+/* .Home{
     text-align: left; 
     width : 100%;
     position: absolute;
@@ -17,9 +17,9 @@ html{
     padding: 0;
     margin-bottom: auto;
 
-}
+} */
 
-.Footer{
+/* .Footer{
     position: absolute;
     text-align: left; 
     height: 7.5em;
@@ -27,41 +27,45 @@ html{
     bottom: 0;
     right: 0;
 
-}
+} */
 
-.Container{
-    text-align: left;
+.Body{
+    /* text-align: left; */
     display: flex; 
     flex-direction: row;
-    width: 100%;
+    /* width: 100%;
     margin: 0;
     padding: 0;
-    left: 0;
+    left: 0; */
 }
 
-.LeftInfo{
-    
-    width:100%;
-    min-height: 400px;
-    margin-bottom: 100px;
-    clear: both;
-}
-
-.RightInfo{
-    width:100%;
+.Right{
+    align-items: right;
+    margin-left: 30px;
+    margin-top: 10px;
+    /* width:100%;
     padding: 30px;
     min-height: 400px;
     margin-bottom: 100px;
-    clear: both;
+    clear: both; */
+}
+
+.Left{
+    width: 70%;
+    /* min-height: 400px;
+    margin-bottom: 100px;
+    clear: both; */
 }
 
 
-.ListSize{
+
+
+/* .ListSize{
     margin: 0;
     padding: 0;
     transform: scale(0.7);
-}
-.ListItemLeft{
+} */
+/* .ListItemLeft{
     
     margin-left: 12px;
     padding: 0;
@@ -75,12 +79,12 @@ html{
     text-align: left;
     padding: 0;
     margin: 0;
-}
+} */
 
-.needsList{
+/* .needsList{
     width: 500px;
 
-}
+} */
 
 /*Book your driving theory test for:
 
