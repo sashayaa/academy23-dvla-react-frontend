@@ -11,6 +11,7 @@ import Confirmation from './Pages/Confirmation';
 import WelshHome from './Pages/WelshHome';
 import WelshBooking from './Pages/WelshBooking';
 import WelshPersonalDetails from './Pages/WelshPersonalDetails';
+import RescheduleConfirmation from './Pages/RescheduleConfirmation';
 //const axios = require('axios').default;
 
 
@@ -28,7 +29,8 @@ function App() {
           <Route exact path="/confirmation" element={ <Confirmation/> } />   
           <Route exact path="/WelshHome" element={ <WelshHome/> } />   
           <Route exact path="/WelshBooking" element={ <WelshBooking/> } />
-          <Route exact path="/WelshPersonalDetails" element={ <WelshPersonalDetails/> } />  
+          <Route exact path="/WelshPersonalDetails" element={ <WelshPersonalDetails/> } />
+          <Route exact path="/rescheduleconfirmation" element={ <RescheduleConfirmation/> } />     
         </Routes>
       </div>
      

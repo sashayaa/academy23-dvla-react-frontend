@@ -170,7 +170,7 @@ if (redirect) {
             <LabelText>
               <b>PostCode:</b>
             </LabelText>
-            <HintText>For example, 21 10 1998</HintText>
+            <HintText>For example, SA1 2DN</HintText>
             <ErrorText></ErrorText>
             <Input onChange={handleChangePostcode} value={postcode} />
           </Label>
