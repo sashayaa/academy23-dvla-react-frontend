@@ -26,7 +26,7 @@ const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata";
 export default function ViewBooking() {
   const [post, setPost] = React.useState(null);
   const [requestState, setRequestState] = React.useState(false);
-  const [dummyClientId, setDummyClientId] = React.useState(2);
+  const [dummyClientId, setDummyClientId] = React.useState();
   const [dvlaReference, setDvlaReference] = React.useState("");
 
   const handleChange = (e) => {
@@ -41,6 +41,8 @@ export default function ViewBooking() {
 
     setRequestState(true);
   };
+
+  
 
   React.useEffect(() => {
     axios.get(`${baseURL}/${dummyClientId}`).then((response) => {

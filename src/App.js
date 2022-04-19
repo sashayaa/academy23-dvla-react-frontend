@@ -11,6 +11,7 @@ import Confirmation from './Pages/Confirmation';
 import WelshHome from './Pages/WelshHome';
 import WelshBooking from './Pages/WelshBooking';
 import WelshPersonalDetails from './Pages/WelshPersonalDetails';
+import CancelConfirmation from './Pages/CancelConfirmation';
 //const axios = require('axios').default;
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/viewbooking" element={ <ViewBooking/> } />    
           <Route exact path="/personaldetailsform" element={ <PersonalDetailsForm/> } />  
           <Route exact path="/confirmation" element={ <Confirmation/> } />   
+          <Route exact path="/CancelConfirmation" element={ <CancelConfirmation/> } /> 
           <Route exact path="/WelshHome" element={ <WelshHome/> } />   
           <Route exact path="/WelshBooking" element={ <WelshBooking/> } />
           <Route exact path="/WelshPersonalDetails" element={ <WelshPersonalDetails/> } />  
