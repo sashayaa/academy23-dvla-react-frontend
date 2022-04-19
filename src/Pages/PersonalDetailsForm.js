@@ -235,9 +235,7 @@ if (redirect) {
           <Button onClick={submitForm}>Submit</Button> 
 
 
-          {/*<Link to="/booking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
-              Start now
-  </Button></Link>*/}
+        
         </div>
       </Page>
 
