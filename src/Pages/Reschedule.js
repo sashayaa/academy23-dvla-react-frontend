@@ -38,6 +38,9 @@ export default function Reschedule() {
 
   const rescheduleAppointment = () => {
 /* if date time aren't empty*/
+    if(date && time && dvlaReference){
+      updateDatabase();
+    }
   };
 
   const updateDatabase = async () => {
