@@ -34,7 +34,7 @@ export default function Confirmation() {
             Your reference number
             <br />
             <strong>
-              Random
+              {(Math.floor(Math.random()* 1000))+10}
             </strong>
           </Panel>
         </div>
