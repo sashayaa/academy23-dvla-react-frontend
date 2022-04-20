@@ -57,17 +57,15 @@ export default function ViewBooking() {
   return (
     <div className="ViewBookingpage">
       <Page beforeChildren={<BackLink href="/Booking">Back</BackLink>}> </Page>
-      <div className="info">
-        <div className="textinfo">
-          <H3>Need to view your appointment information?</H3>
-          <Paragraph mb={0}>
-            {" "}
-            If you need to view your appointment details, enter your reference
-            number in the search box below. If there are any issues with your
-            booking please contact us as soon as possible at
-            [theorycustomerservices@dvsa.gov.uk]("mailto:theorycustomerservices@dvsa.gov.uk").
-          </Paragraph>
-        </div>
+
+      <div className="textinfo">
+        <H3>Need to view your appointment information?</H3>
+        <Paragraph>
+          If you need to view your appointment details, enter your reference
+          number in the search box below. If there are any issues with your
+          booking please contact us as soon as possible at
+          [theorycustomerservices@dvsa.gov.uk]("mailto:theorycustomerservices@dvsa.gov.uk").
+        </Paragraph>
       </div>
 
       <div className="viewingtable">
@@ -112,14 +110,12 @@ export default function ViewBooking() {
         )}
         <div className="reschedule">
           <Paragraph>
-            If you need to reschedule your appointment please follow this link
-            and have your reference number ready.
+            If there are any issues with your booking appointment and you need
+            to [cancel](https://driving-theory-booking.herokuapp.com/cancel) or
+            [reschedule](https://driving-theory-booking.herokuapp.com/reschedule)
+            your appointment, please follow the provided links and have your
+            reference number ready.
           </Paragraph>
-          <Link to="/Reschedule" style={{ textDecoration: "none" }}>
-            <Button icon={<ButtonArrow />} start>
-              Reschedule
-            </Button>
-          </Link>
         </div>
       </div>
 

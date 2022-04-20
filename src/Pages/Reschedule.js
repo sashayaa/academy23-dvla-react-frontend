@@ -35,10 +35,9 @@ export default function Reschedule() {
   const [date, setDate] = React.useState("");
   const [location, setLocation] = React.useState("");
 
-
   const rescheduleAppointment = () => {
-/* if date time aren't empty*/
-    if(date && time && dvlaReference){
+    /* if date time aren't empty*/
+    if (date && time && dvlaReference) {
       updateDatabase();
     }
   };
@@ -112,13 +111,16 @@ export default function Reschedule() {
       </div>
 
       <div className="viewingtable">
-        <Label>
+        <Label className="refnum">
           <LabelText>
-            <b>Reference Number</b>
+            <b>Enter your Reference Number:</b>
           </LabelText>
           <ErrorText></ErrorText>
+          <HintText>For example, 1</HintText>
           <Input onChange={handleChange} />
         </Label>
+
+        <br/>
         {/* <div className="button">
           <Button onClick={runAxiosRequest}>Review</Button>
         </div> */}
@@ -176,9 +178,6 @@ export default function Reschedule() {
             <Input onChange={handleChangeNewDate} value={date} />
           </Label>
 
-          <br />
-          <br />
-
           {/* <Label className="LocationChange">
             <LabelText>
               <b>Choose new location or choose the same:</b>
@@ -191,9 +190,9 @@ export default function Reschedule() {
           <br />
 
           {/* <Link to="/rescheduleconfirmation" style={{ textDecoration: "none" }}> */}
-            <Button icon={<ButtonArrow />} onClick={rescheduleAppointment} start>
-              Confirm
-            </Button>
+          <Button icon={<ButtonArrow />} onClick={rescheduleAppointment} start>
+            Confirm
+          </Button>
           {/* </Link> */}
 
           <br />
@@ -203,14 +202,11 @@ export default function Reschedule() {
         </div>
         <div className="cancel">
           <Paragraph>
-            If you need to cancel your appointment please follow this link and
-            have your reference number ready.
+            If there are any issues with your booking appointment and you need
+            to [cancel](https://driving-theory-booking.herokuapp.com/cancel)
+            your appointment, please follow the provided link and have your
+            reference number ready.
           </Paragraph>
-          <Link to="/Cancel" style={{ textDecoration: "none" }}>
-            <Button icon={<ButtonArrow />} start>
-              Cancel
-            </Button>
-          </Link>
         </div>
       </div>
 

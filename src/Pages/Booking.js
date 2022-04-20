@@ -27,7 +27,7 @@ const Booking = () => {
               <InsetText>
                 <Paragraph mb={0}>
                   This page is also [available in Welsh
-                  (Cymraeg)](https://en.wikipedia.org/wiki/Markdown).
+                  (Cymraeg)](https://driving-theory-booking.herokuapp.com/welshhome).
                 </Paragraph>
               </InsetText>
 
