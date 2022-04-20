@@ -1,6 +1,5 @@
 import React from "react";
 import axios from "axios";
-import { setUpdatedAt } from "axios";
 import { useEffect, useState, react, CellHeader } from "react";
 import "../Styles/Reschedule.css";
 import {
@@ -27,46 +26,68 @@ export default function Reschedule() {
     window.scroll(0, 0);
   }, []);
 
-  const [post, setPost] = React.useState(null);
+  // const [post, setPost] = React.useState(null);
   const [requestState, setRequestState] = React.useState(false);
-  const [dummyClientId, setDummyClientId] = React.useState();
   const [dvlaReference, setDvlaReference] = React.useState("");
   const [time, setTime] = React.useState("");
   const [date, setDate] = React.useState("");
-  const [location, setLocation] = React.useState("");
+  //const [location, setLocation] = React.useState("");
+
+
+  //original axios request
+  // const updateDatabase = async () => {
+  // console.log("Put request is being run");
+  // const userAppointmentInfo = new Object();
+  // userAppointmentInfo["appointmentDate"] = date;
+  // userAppointmentInfo["appointmentTime"] = time;
+  // // userAppointmentInfo["appointmentLocation"] = location;
+  // const userAppointmentJson = JSON.stringify(userAppointmentInfo);
+  // console.log(userAppointmentInfo);
+  // console.log(userAppointmentJson);
+  // try {
+  //   // make axios post request
+  //   const response = await axios({
+  //     method: "put",
+  //     url: `${baseURL}/${dvlaReference}`,
+  //     data: userAppointmentJson,
+  //     headers: { "Content-Type": "application/json" },
+  //   });
+  //   console.log("Looks like this has been submitted");
+  // } catch (error) {
+  //   console.log(error);
+  // }
+  //   };
 
   const rescheduleAppointment = () => {
     /* if date time aren't empty*/
     if (date && time && dvlaReference) {
-      updateDatabase();
+      setRequestState(true);
     }
   };
 
-  const updateDatabase = async () => {
-    console.log("Put request is being run");
-    const userAppointmentInfo = new Object();
+  /*axios.put('https://example.com/cats/1', {
+    name: 'Tophat Cat'
+  })
+  .then(response => {
+    console.log(response);
+  })
+  .catch(error => {
+    console.log(err);
+  });*/
 
-    userAppointmentInfo["appointmentDate"] = date;
-    userAppointmentInfo["appointmentTime"] = time;
-    userAppointmentInfo["appointmentLocation"] = location;
-
-    const userAppointmentJson = JSON.stringify(userAppointmentInfo);
-    console.log(userAppointmentInfo);
-    console.log(userAppointmentJson);
-
-    try {
-      // make axios post request
-      const response = await axios({
-        method: "put",
-        url: baseURL,
-        data: userAppointmentJson,
-        headers: { "Content-Type": "application/json" },
+  React.useEffect(() => {
+    axios.patch(`${baseURL}/${dvlaReference}`, {
+      appointmentDate: 'trial',      //date,
+      appointmentTime: 'trial'    //time
+    })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch(error => {
+        console.log(error);
       });
-      console.log("Looks like this has been submitted");
-    } catch (error) {
-      console.log(error);
-    }
-  };
+  }, [requestState]);
+
 
   const handleChange = (e) => {
     setDvlaReference(e.target.value.trim());
