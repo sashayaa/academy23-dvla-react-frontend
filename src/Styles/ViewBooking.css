@@ -15,28 +15,25 @@ html{
     position: absolute;
     margin: 0; 
     padding: 0;
-    margin-bottom: auto;
-    padding: 4em;
     padding-left: 17em;
+
 } 
 
 
 .reschedule{
     text-align: left;
     width: 100%;
-    /* position: relative; */
     margin: 0; 
-    /* transform: scale(0.9); */
     margin-right: 90em;
-    /* padding-bottom: 50em; */
+
 
 }
 
 .viewingtable{
     padding-left:17em;
-    padding-top:15em;
+    padding-top:10em;
     width: 65%;
-    margin-bottom: 10em;
+    margin-bottom: 8em;
 }
 
 .button{

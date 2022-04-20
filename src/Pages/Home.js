@@ -59,8 +59,8 @@ export default function Home() {
               See details here
             </Button></Link>
             <Paragraph>
-              [Cancel](http://localhost:3000/cancel) or
-              [reschedule](https://en.wikipedia.org/wiki/Markdown) your booked
+              [Cancel](https://driving-theory-booking.herokuapp.com/cancel) or
+              [reschedule](https://driving-theory-booking.herokuapp.com/reschedule) your booked
               test using a reference number from:
             </Paragraph>
             <OrderedList listStyleType="bullet">
