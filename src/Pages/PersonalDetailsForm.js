@@ -208,8 +208,7 @@ if (redirect) {
             <Input onChange={handleChangeDate} value={date}/>
           </Label>
           <br/>
-          <DateField input={{onChange: (date) => /*console.log(date, "<-- date")*/ date}} onChange={showMeTheDate}/>
-
+          {/* <DateField input={{onChange: (date) => console.log(date, "<-- date") date}} onChange={showMeTheDate}/> */}
           <br />
 
           <Label>
