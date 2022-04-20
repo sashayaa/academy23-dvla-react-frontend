@@ -35,6 +35,11 @@ export default function Reschedule() {
   const [date, setDate] = React.useState("");
   const [location, setLocation] = React.useState("");
 
+
+  const rescheduleAppointment = () => {
+/* if date time aren't empty*/
+  };
+
   const updateDatabase = async () => {
     console.log("Put request is being run");
     const userAppointmentInfo = new Object();
@@ -66,27 +71,27 @@ export default function Reschedule() {
   };
 
   const handleChangeNewDate = (e) => {
-    setDate(e.target.value.trim());
+    setDate(e.target.value);
   };
 
   const handleChangeNewTime = (e) => {
-    setDate(e.target.value.trim());
+    setTime(e.target.value.trim());
   };
 
-  const runAxiosRequest = (e) => {
-    e.preventDefault();
-    if (dvlaReference !== "") {
-      setDummyClientId(parseInt(dvlaReference));
-    }
+  // const runAxiosRequest = (e) => {
+  //   e.preventDefault();
+  //   if (dvlaReference !== "") {
+  //     setDummyClientId(parseInt(dvlaReference));
+  //   }
 
-    setRequestState(true);
-  };
+  //   setRequestState(true);
+  // };
 
-  React.useEffect(() => {
-    axios.get(`${baseURL}/${dummyClientId}`).then((response) => {
-      setPost(response.data);
-    });
-  }, [requestState, dummyClientId]);
+  // React.useEffect(() => {
+  //   axios.get(`${baseURL}/${dummyClientId}`).then((response) => {
+  //     setPost(response.data);
+  //   });
+  // }, [requestState, dummyClientId]);
 
   return (
     <div className="ViewBookingpage">
@@ -111,11 +116,11 @@ export default function Reschedule() {
           <ErrorText></ErrorText>
           <Input onChange={handleChange} />
         </Label>
-        <div className="button">
+        {/* <div className="button">
           <Button onClick={runAxiosRequest}>Review</Button>
-        </div>
+        </div> */}
 
-        {post && requestState === true && (
+        {/* {post && requestState === true && (
           <Table className="tablestyling">
             <Table.Row>
               <Table.CellHeader>Reference Number</Table.CellHeader>
@@ -142,18 +147,18 @@ export default function Reschedule() {
               <Table.Cell>{post.appointmentLocation}</Table.Cell>
             </Table.Row>
           </Table>
-        )}
+        )} */}
 
         <div className="fields">
           <br />
 
-          <Label className="DateChange">
+          <Label className="TimeChange">
             <LabelText>
-              <b>Choose new appointment date:</b>
+              <b>Choose new appointment time:</b>
             </LabelText>
             <ErrorText></ErrorText>
-            <HintText>For example, 21 10 2022</HintText>
-            <Input onChange={handleChangeNewDate} value={date} />
+            <HintText>For example, 11:20</HintText>
+            <Input onChange={handleChangeNewTime} value={time} />
           </Label>
 
           <br />
@@ -171,22 +176,22 @@ export default function Reschedule() {
           <br />
           <br />
 
-          <Label className="LocationChange">
+          {/* <Label className="LocationChange">
             <LabelText>
               <b>Choose new location or choose the same:</b>
             </LabelText>
             <ErrorText></ErrorText>
             <HintText></HintText>
             <Input onChange={handleChangeNewTime} value={location} />
-          </Label>
+          </Label> */}
 
           <br />
 
-          <Link to="/rescheduleconfirmation" style={{ textDecoration: "none" }}>
-            <Button icon={<ButtonArrow />} start>
+          {/* <Link to="/rescheduleconfirmation" style={{ textDecoration: "none" }}> */}
+            <Button icon={<ButtonArrow />} onClick={rescheduleAppointment} start>
               Confirm
             </Button>
-          </Link>
+          {/* </Link> */}
 
           <br />
           <br />
