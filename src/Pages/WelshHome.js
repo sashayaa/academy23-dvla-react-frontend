@@ -1,16 +1,12 @@
 // import axios from 'axios';
 import React, { useEffect } from "react";
-import { Page, H2, UnorderedList, H4, H3 } from "govuk-react";
+import { Page, H2, UnorderedList, Footer, H4, H3, Paragraph, OrderedList, ListItem, Button, ButtonArrow, SectionBreak } from "govuk-react";
 import "../Styles/Home.css";
-import { Paragraph } from "govuk-react";
-import { OrderedList, ListItem } from "govuk-react";
-import { Button, ButtonArrow } from "govuk-react";
-import { Footer } from "govuk-react";
 import { Link } from "react-router-dom";
 
 // const baseURL = "https://dvla-backend.herokuapp.com/api/clientsdata";
 
-export default function WelshHome() {
+export default function Home() {
   useEffect(() => {
     window.scroll(0, 0);
   }, []);
@@ -18,8 +14,8 @@ export default function WelshHome() {
   return (
     <div className="Home">
       <Page>
-        <div className="Container">
-          <div className="LeftInfo">
+        <div className="Body">
+          <div className="Left">
             <H2 class>Archebwch eich prawf theori ar-lein</H2>
 
             <H3> Bydd angen eich:</H3>
@@ -30,13 +26,13 @@ export default function WelshHome() {
               <ListItem>cerdyn credyd neu ddebyd</ListItem>
             </OrderedList>
 
-            <Link to="/welshbooking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
+            <Link to="/booking" style={{ textDecoration: 'none' }} ><Button icon={<ButtonArrow />} start>
             Dechreuwch nawr
             </Button></Link>
-      
+
             <p>
             Mae'r dudalen hon hefyd ar gael yn{" "}
-              <a href="https://en.wikipedia.org/wiki/Markdown">
+              <a href="https://driving-theory-booking.herokuapp.com/home">
                 {" "}
                 Saesneg (English)
               </a>
@@ -57,40 +53,42 @@ export default function WelshHome() {
               </ListItem>
             </orderedList>
           </div>
-          <div className="RightInfo">
-            <H2> Wedi Archebu Eisoes?</H2>
-            <Link to="/viewbooking" style={{ textDecoration: 'none'}} ><Button icon={<ButtonArrow />} start>
+          <div className="Right">
+            <H3> Wedi Archebu Eisoes?</H3>
+            <Link to="/viewbooking" style={{ textDecoration: 'none' }} ><Button icon={<ButtonArrow />} start>
             Gweler y manylion yma
             </Button></Link>
             <Paragraph>
-            [Canslo](http://localhost:3000/cancel) neu
-              [aildrefnu](https://en.wikipedia.org/wiki/Markdown) eich prawf a archebwyd gan ddefnyddio rhif cyfeirnod oddi wrth:
+              [Canslo](https://driving-theory-booking.herokuapp.com/cancel) neu
+              [aildrefnu](https://driving-theory-booking.herokuapp.com/reschedule) your booked
+              test using a reference number from:
             </Paragraph>
             <OrderedList listStyleType="bullet">
-              <ListItem>Llythyr atgoffa diweddar gan DVLA.</ListItem>
-              <ListItem>E-bost cadarnhad gan DVLA.</ListItem>
+            <ListItem>Llythyr atgoffa diweddar gan DVLA.</ListItem>
+            <ListItem>E-bost cadarnhad gan DVLA.</ListItem>
             </OrderedList>
+            <SectionBreak level="LARGE" visible />
             <H2>Pynciau Cysylltiedig</H2>
             <UnorderedList listStyleType="none">
-              <ListItem>Pasio eich Prawf Ymarferol</ListItem>
-              <ListItem>Darparwyr yswiriant dibynadwy</ListItem>
-              <ListItem>Adnewyddu trwydded yrru</ListItem>
-              <ListItem>Sut i brynu batmobile</ListItem>
+            <ListItem>Pasio eich Prawf Ymarferol</ListItem>
+            <ListItem>Darparwyr yswiriant dibynadwy</ListItem>
+            <ListItem>Adnewyddu trwydded yrru</ListItem>
+            <ListItem>Sut i brynu batmobile</ListItem>
             </UnorderedList>
           </div>
         </div>
 
       </Page>
-      <div className="Footer">
-          <Footer
-            meta={
-              <Footer.MetaCustom>
-                Built by the{" "}
-                <Footer.Link href="/">Government Digital Service</Footer.Link>
-              </Footer.MetaCustom>
-            }
-          />
-        </div>
+
+      <Footer
+        meta={
+          <Footer.MetaCustom>
+            Built by the{" "}
+            <Footer.Link href="/">Government Digital Service</Footer.Link>
+          </Footer.MetaCustom>
+        }
+      />
+
     </div>
   );
 }
