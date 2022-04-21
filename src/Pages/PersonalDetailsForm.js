@@ -3,7 +3,7 @@
 import axios from "axios";
 import "../Styles/PersonalDetailsForm.css";
 import React, { useEffect } from "react";
-import { Page, H2, DateField, ErrorSummary } from "govuk-react";
+import { Page, H2, DateField, ErrorSummary, BackLink } from "govuk-react";
 import "../Styles/Home.css";
 import {
   Button,
@@ -130,7 +130,7 @@ if (redirect) {
 
   return (
     <div className="PersonalForm">
-      <Page>
+      <Page beforeChildren={<BackLink href="/Booking">Back</BackLink>}> 
       {formInvalid && ( <ErrorSummary
   errors={[
     {
