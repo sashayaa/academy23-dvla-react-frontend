@@ -17,16 +17,7 @@ export default function Confirmation() {
 
     <div className="ConfirmationPage">
 
-      <TopNav
-        company={
-          <TopNav.Anchor href="localhost:3000" target="new">
-            <TopNav.IconTitle /*icon={<Crown height="32" width="36"/>}*/>
-              GOV.UK
-            </TopNav.IconTitle>
-          </TopNav.Anchor>
-        }
-        /*serviceTitle={<TopNav.NavLink href="https://example.com" target="new">Service Title</TopNav.NavLink>}*/
-      />
+    <Page beforeChildren={<BackLink href="/">Back</BackLink>}> 
 
       <div className="Container">
         <div className="Panel">
@@ -50,7 +41,7 @@ export default function Confirmation() {
             </Footer.MetaCustom>
           }
         />
-      </div>
+      </div></Page>
     </div>
   )
 }
