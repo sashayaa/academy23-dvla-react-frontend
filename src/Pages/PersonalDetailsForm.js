@@ -203,7 +203,7 @@ if (redirect) {
             <LabelText>
               <b>Preferable date for your theory test:</b>
             </LabelText>
-            <HintText>Example hint</HintText>
+            <HintText>DD/MM/YY</HintText>
             <ErrorText></ErrorText>
             <Input onChange={handleChangeDate} value={date}/>
           </Label>
@@ -215,6 +215,7 @@ if (redirect) {
             <LabelText>
               <b>Preferable location:</b>
             </LabelText>
+            <HintText>Swansea, Manchester, London, Liverpool</HintText>
             <ErrorText></ErrorText>
             <Input onChange={handleChangeLocation} value={location} />
           </Label>
@@ -225,6 +226,7 @@ if (redirect) {
             <LabelText>
               <b>Preferable time:</b>
             </LabelText>
+            <HintText>00:00</HintText>
             <ErrorText></ErrorText>
             <Input onChange={handleChangeTime} value={time} />
           </Label>
